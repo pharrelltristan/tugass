@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I loveee uuu</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Plus+Jakarta+Sans:wght@300;400;600&family=Playfair+Display:italic,wght@700&display=swap" rel="stylesheet">
     
     <style>
@@ -152,10 +153,30 @@
             .polaroid img { height: 180px; }
             h2 { font-size: 2.5rem; }
         }
-        /* ===== FIX KHUSUS HP TANPA MENGUBAH PC ===== */
+        /* ===== GLOBAL FONT FIX ===== */
+body {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* Perbaiki typo kalau sebelumnya ada line-height aneh */
+h1 {
+    line-height: 1.3;
+}
+
+/* ===== MOBILE FIX TANPA MENGUBAH PC ===== */
 @media (max-width: 600px) {
 
-    /* Perbaiki heading yang kepotong */
+    body {
+        font-size: 16px;
+    }
+
     h1 {
         font-size: 2rem !important;
         line-height: 1.3 !important;
@@ -167,31 +188,36 @@
         line-height: 1.3;
     }
 
-    /* Supaya paragraf lebih nyaman dibaca */
     .story-content p {
         font-size: 1rem !important;
         line-height: 1.8 !important;
+        letter-spacing: 0.3px;
         text-align: left;
     }
 
-    /* Supaya foto tidak kepotong */
+    /* Foto tidak kepotong */
     .polaroid img {
         height: auto !important;
         max-height: none !important;
         object-fit: contain !important;
     }
 
-    /* Supaya polaroid tidak terlalu zoom */
+    /* Hover tidak terlalu agresif di HP */
     .polaroid:hover {
         transform: rotate(0deg) scale(1.02);
     }
 
-    /* Supaya tombol tidak kepencet keluar */
+    /* Tombol aman */
     .btn-group {
         flex-direction: column;
         gap: 15px;
-        height: au
+        height: auto;
+    }
 
+    .btn {
+        width: 100%;
+    }
+}
     </style>
 </head>
 <body>
@@ -377,3 +403,4 @@
     </script>
 </body>
 </html>
+
